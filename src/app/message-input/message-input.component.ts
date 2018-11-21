@@ -7,15 +7,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class MessageInputComponent implements OnInit {
   @Output() public messageEvent = new EventEmitter();
-  @Output() public dateEvent = new EventEmitter();
-  public value = "";
+  public value: string = "";
   constructor() { }
 
   ngOnInit() { }
 
   saveMessage() {
-    this.messageEvent.emit(this.value);
-    this.dateEvent.emit(new Date());
+    this.messageEvent.emit({
+      t: new Date(),
+      m: this.value
+    });
+    this.value = "";
   }
 
 }

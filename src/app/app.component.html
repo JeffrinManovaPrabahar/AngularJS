@@ -1,10 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="d-flex">
   <div class="mr-auto">
-    <app-message-tag [date]="date" [message]="message"></app-message-tag>
+    <app-message-tag></app-message-tag>
   </div>
   <div class="ml-auto">
     <app-date-picker></app-date-picker>
   </div>
 </div>
-<app-message-input (dateEvent)="date=$event" (messageEvent)="message=$event" class="fixed-bottom"></app-message-input>
+<app-message-input (messageEvent)="insetMessage($event)" class="fixed-bottom"></app-message-input>

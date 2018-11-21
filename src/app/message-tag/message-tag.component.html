@@ -1,5 +1,5 @@
-<p class="p-3 small" *ngIf="(date != '' && message != '')?true:false">
-  <span>#{{ date | date : 'dd MMM yyyy' }} @ {{ date | date : 'hh:mm a' }}</span>
+<p class="p-3 small" *ngFor="let msg of messages">
+  <span>#{{ msg.t | date : 'dd MMM yyyy' }} @ {{ msg.t | date : 'hh:mm a' }}</span>
   <br>
-  <span>{{ message }}</span>
+  <span>{{ msg.m }}</span>
 </p>

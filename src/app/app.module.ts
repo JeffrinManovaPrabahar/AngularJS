@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { MessageInputComponent } from './message-input/message-input.component';
 import { MessageTagComponent } from './message-tag/message-tag.component';
+import { JournalServiceService } from './journal-service.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { MessageTagComponent } from './message-tag/message-tag.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [JournalServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
