@@ -1,0 +1,5 @@
+<p class="p-3 small" *ngIf="(date != '' && message != '')?true:false">
+  <span>#{{ date | date : 'dd MMM yyyy' }} @ {{ date | date : 'hh:mm a' }}</span>
+  <br>
+  <span>{{ message }}</span>
+</p>

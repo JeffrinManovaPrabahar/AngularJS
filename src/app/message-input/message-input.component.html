@@ -1,0 +1,13 @@
+<div class="input-group">
+    <input class="form-control input-lg rounded-0 border-0 text-dark" style="height:auto;" [(ngModel)]="value" type="text"
+        placeholder="Type your journal here...">
+    <span class="input-group-btn bg-white">
+        <button class="btn rounded-0 border-0 bg-white" (click)="saveMessage()" [ngClass]="{'invisible': value.length == 0}" style="line-height:10px;">
+            <i class="material-icons">
+                save
+            </i>
+            <br>
+            <span style="font-size: 10px;">Save</span>
+        </button>
+    </span>
+</div>
