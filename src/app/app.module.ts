@@ -8,6 +8,7 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 import { MessageInputComponent } from './message-input/message-input.component';
 import { MessageTagComponent } from './message-tag/message-tag.component';
 import { JournalServiceService } from './journal-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { JournalServiceService } from './journal-service.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [JournalServiceService],
   bootstrap: [AppComponent]

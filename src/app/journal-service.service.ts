@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
+// import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClient } from '@angular/common/http';
+import { IJournalMessage } from './journal';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JournalServiceService {
 
-  constructor() { }
+  private _url: string = "/assets/data/21Nov2018.json";
 
-  getMessages() {
-    return [{
-      "t": "Wed Nov 21 2018 21:45:22 GMT+0530 (India Standard Time)",
-      "m": "First Message."
-    }, {
-      "t": "Wed Nov 21 2018 21:45:22 GMT+0530 (India Standard Time)",
-      "m": "Second Message."
-    }, {
-      "t": "Wed Nov 21 2018 21:45:22 GMT+0530 (India Standard Time)",
-      "m": "Third Message."
-    }]
+  constructor(private http: HttpClient) { }
+
+  getMessages(): Observable<IJournalMessage[]> {
+    return this.http.get<IJournalMessage[]>(this._url);
   }
 }

@@ -13,7 +13,8 @@ export class MessageTagComponent implements OnInit {
   constructor(private _journalService: JournalServiceService) { }
 
   ngOnInit() {
-    this.messages = this._journalService.getMessages();
+    this._journalService.getMessages()
+      .subscribe(data => this.messages = data);
   }
 
   addMessage(date: Date, message: string) {
